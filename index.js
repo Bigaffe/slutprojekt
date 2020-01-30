@@ -3,7 +3,11 @@ const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const secret = require("./secret");
-
+const Db = require('tingodb')().Db;
+ 
+const db = new Db(__dirname+'/database', {});
+// Fetch a collection to insert document into
+const users = db.collection("users");
 
 const app = express();
 
@@ -14,7 +18,7 @@ app.get("/",function(req,res){
     res.send(req.cookies);
 });
 
-//Register formulär
+//Register formulär_________________________________________________________________________________________________________
 
 app.get("/register",function(req,res){
     res.sendFile(__dirname+"/registerform.html");
@@ -23,21 +27,34 @@ app.post("/register",function(req,res){
     let username = req.body.username;
     let email = req.body.email;
     let password = req.body.password;
-
-    bcrypt.hash(password,12,function(err,hash){
+    users.find({email:req.body.email}).toArray(function(err,user){
+        if(user.length > 0)
+        {
+            res.send("User already exists")
+        }
+        else{
+            bcrypt.hash(password,12,function(err,hash){
 
      
-        password = hash;
+                password = hash;
+                //Sätt in if satsen under let user då user inte är definerad innan dess
+                let user = {username,email,password};
+                console.log(user);
+                users.insert(user);
+                res.send(user);
+        
+        
+            });
 
-        let user = {username,email,password};
-        console.log(user);
-        res.send(user);
-
+        }
     });
+
+
+
 
 });
 
-//
+//Login ________________________________________________________________________________________________________
 
 app.get("/login",function(req,res){
     res.sendFile(__dirname+"/loginform.html");
@@ -46,13 +63,9 @@ app.get("/login",function(req,res){
 app.post("/login",function(req,res){
 
     // Hämta våra användare från db/fil
-    const users = require("./users");
 
-    const user = users.filter(function(u){
-        return req.body.email === u.email
-    });
-
-    // Om vi har en och exakt en användare med rätt email
+    users.find({email:req.body.email}).toArray(function(err,user){
+                // Om vi har en och exakt en användare med rätt email
    if(user.length===1)
    {
 
@@ -69,15 +82,22 @@ app.post("/login",function(req,res){
             }
             else{
                 res.send("Wrong Password");
-            }
+            } 
 
 
         })
    }
    else
    {
-        res.send("no such user");
+        res.send("no such user (No matching Name or password)");
    }
+
+
+    });
+
+
+
+
 
     /**
      * 1. hämta data som klienten skickat ( Repetition )
