@@ -1,3 +1,5 @@
+//import { dirname } from "path"; ???
+
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
@@ -15,7 +17,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 
 app.get("/",function(req,res){
-    res.send(req.cookies);
+    res.sendFile(__dirname+"/homeform.html");
+    //res.send(req.cookies);
 });
 
 //Register formulär_________________________________________________________________________________________________________
@@ -28,7 +31,11 @@ app.post("/register",function(req,res){
     let email = req.body.email;
     let password = req.body.password;
     users.find({email:req.body.email}).toArray(function(err,user){
-        if(user.length > 0)
+        
+        
+        
+        
+        if(users.length > 0)
         {
             res.send("User already exists")
         }
@@ -37,16 +44,28 @@ app.post("/register",function(req,res){
 
      
                 password = hash;
-                //Sätt in if satsen under let user då user inte är definerad innan dess
+                
                 let user = {username,email,password};
                 console.log(user);
-                users.insert(user);
-                res.send(user);
+                users.insert(user, (err, result)=>{
+                    console.log(err);
+                    console.log(result);
+                    
+                });
+                //Testing
+                //res.send(user);
         
-        
+                /*users.findOne({username: 'affepaffe'}, (err, item)=>{
+                    res.send(item)
+                });*/
+
+
             });
 
         }
+        
+        
+    
     });
 
 
@@ -54,7 +73,7 @@ app.post("/register",function(req,res){
 
 });
 
-//Login ________________________________________________________________________________________________________
+//Login _______________________________________________________________________________________________________________
 
 app.get("/login",function(req,res){
     res.sendFile(__dirname+"/loginform.html");
@@ -64,41 +83,40 @@ app.post("/login",function(req,res){
 
     // Hämta våra användare från db/fil
 
-    users.find({email:req.body.email}).toArray(function(err,user){
-                // Om vi har en och exakt en användare med rätt email
-   if(user.length===1)
-   {
+    users.findOne({email:req.body.email}, function(err,user){
+        console.log("1");
 
-        // kolla lösenord
-        bcrypt.compare(req.body.password,user[0].password,function(err,success){
+        if (user ){
 
-            if(success){
+            bcrypt.compare(req.body.password,user.password,function(err,success){
+                console.log(success);
+                console.log("2")
+    
+                if(success){
+                    
+                    // res.cookie("auth",true,{httpOnly:true,sameSite:"strict"});
+                    console.log("3")
+                    const token = jwt.sign({email:user.email},secret,{expiresIn:3600});
+                    res.cookie("token",token,{httpOnly:true,sameSite:"strict",maxAge:3600000}); 
+                    res.redirect("/?loginSuccess");
+                    //Ändra till hem menyn
+                }
+                else{
+                    res.send("Wrong Password");
+                } 
                 
-               // res.cookie("auth",true,{httpOnly:true,sameSite:"strict"});
-               
-               const token = jwt.sign({email:user[0].email},secret,{expiresIn:60});
-               res.cookie("token",token,{httpOnly:true,sameSite:"strict"}); 
-               res.send("Login Success!!!!!!!");
-            }
-            else{
-                res.send("Wrong Password");
-            } 
+    
+            })
 
 
-        })
-   }
-   else
-   {
-        res.send("no such user (No matching Name or password)");
-   }
+        }
+        else {
+            res.redirect("/login?err");
+        }
 
 
+        
     });
-
-
-
-
-
     /**
      * 1. hämta data som klienten skickat ( Repetition )
      * 2. Leta efter användare i databas/fil/minne
@@ -114,10 +132,17 @@ app.post("/login",function(req,res){
      * 9. Småfix för att förbättra säkerhet och fixa utloggning. 
      */
 
-  
-
 });
 
-// kollar om systemet har en angiven port, annars 3700...
+//Hem menyn_______________________________________________________________________________________________________________________________
+
+app.get("/posts",function(req,res){
+    res.sendFile(__dirname + "/posts.html");
+})
+app.get("/post",function(req,res){
+    res.sendFile(__dirname + "/postform.html");
+})
+
+// kollar om systemet har en angiven port, annars 3700..._______________________________________________________________________________
 const port = process.env.PORT || 3700
 app.listen(port, function(){console.log("port:" +port)});
