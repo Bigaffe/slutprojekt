@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const secret = require("./secret");
+const postTemp = require("./posts.js");
 const Db = require('tingodb')().Db;
  
 const db = new Db(__dirname+'/database', {});
@@ -59,7 +60,7 @@ app.post("/register",function(req,res){
                     res.send(item)
                 });*/
 
-
+                res.redirect("/login");
             });
 
         }
@@ -102,7 +103,7 @@ app.post("/login",function(req,res){
                     //Ändra till hem menyn
                 }
                 else{
-                    res.send("Wrong Password");
+                    res.redirect("/login?err");
                 } 
                 
     
@@ -141,6 +142,26 @@ app.get("/posts",function(req,res){
 })
 app.get("/post",function(req,res){
     res.sendFile(__dirname + "/postform.html");
+})
+
+app.post("/post", function(req,res){
+
+    var today = new Date();
+    //var tt = String(today.getTime()).padStart(2, '0');
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    today = dd + '/' + mm + '/' + yyyy;
+
+    let title = req.body.title;
+    let picture = req.body.picture;
+    console.log(title,picture,today);
+
+    
+
+    res.send(postTemp(title,picture,today));
+    //let username
+    //let time
 })
 
 // kollar om systemet har en angiven port, annars 3700..._______________________________________________________________________________

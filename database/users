@@ -4,12 +4,9 @@
 {"k":"0000000078","o":"0000000161","v":"001"}
 {"_id":3,"_uid":3,"_dt":1580985234935,"_s":"fb0006ac9e7fc9b8283ff1475905c26f"}
 {"username":"Cabbeh","email":"cashen0116@edu.halmstad.se","password":"$2a$12$R7rOgVAd4V/VmKbWF1kMf.l8QPf5kFkWFZbx2n3/XzKmI4CN/StFy","_id":{"$wrap":"$oid","v":3}}
-{"k":"0000000078","o":"0000000161","v":"001"}
-{"_id":4,"_uid":4,"_dt":1580985267775,"_s":"77e50efb53beaac817328a5697c35830"}
-{"username":"Cabbeh","email":"cashen0116@edu.halmstad.se","password":"$2a$12$bY24M8RT7pyjtOJ2sjIfcugPRZ.g3Xy4.L/maQ7kMFu/W3aJBDSX6","_id":{"$wrap":"$oid","v":4}}
-{"k":"0000000078","o":"0000000161","v":"001"}
-{"_id":5,"_uid":5,"_dt":1580985352675,"_s":"7cd2244be3d8a5e9357a130062c98c83"}
-{"username":"Cabbeh","email":"cashen0116@edu.halmstad.se","password":"$2a$12$M7fpOfwortDTP.OqaEyapOqkoewQSUGy9xJLWlQL3tCuGHVfI/3K.","_id":{"$wrap":"$oid","v":5}}
 {"k":"0000000078","o":"0000000150","v":"001"}
 {"_id":6,"_uid":6,"_dt":1580985387955,"_s":"71522862ec230f7a1d8c81b12b2335d5"}
 {"username":"asfasf","email":"afsfa@gmail.com","password":"$2a$12$Cdjeii0iqYAezH2s.6c1seOu5SvA2lGxEgCYMfWOH.wz/vVgBpZUG","_id":{"$wrap":"$oid","v":6}}
+{"k":"0000000078","o":"0000000147","v":"001"}
+{"_id":7,"_uid":7,"_dt":1581405404267,"_s":"d0ff19da4c0ac263b4b99728321c1b97"}
+{"username":"mus","email":"hasse@lasses.se","password":"$2a$12$4HiIc87hW0RpV0OdG9yVeehussaqKldvvcKzGDep1DNO.EIIki2p2","_id":{"$wrap":"$oid","v":7}}
