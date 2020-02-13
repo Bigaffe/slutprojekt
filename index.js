@@ -31,14 +31,16 @@ app.post("/register",function(req,res){
     let username = req.body.username;
     let email = req.body.email;
     let password = req.body.password;
-    users.find({email:req.body.email}).toArray(function(err,user){
+    users.findOne({email:req.body.email}, function(err,user){
+        
+    //users.find({email:req.body.email}).toArray(function(err,user){
+        //Kommenterade boty user.length och find för att de inte fungerade som de skulle och satte in samma setup som login
         
         
-        
-        
-        if(users.length > 0)
+        if (user )
+        //if(users.length > 1)
         {
-            res.send("User already exists")
+            res.redirect("/register?err=user_exists")
         }
         else{
             bcrypt.hash(password,12,function(err,hash){
@@ -53,12 +55,7 @@ app.post("/register",function(req,res){
                     console.log(result);
                     
                 });
-                //Testing
-                //res.send(user);
-        
-                /*users.findOne({username: 'affepaffe'}, (err, item)=>{
-                    res.send(item)
-                });*/
+                
 
                 res.redirect("/login");
             });

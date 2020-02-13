@@ -25,7 +25,7 @@
         <button onclick="window.location='/register'">Register</button>
         <button onclick="window.location='/posts'">Posts</button>
 
-    <h2>Login to this page</h2>
+    <h2>Register on this page</h2>
     <form action="/register" method="post">
     
         <input type="text" name="username" placeholder="username">
@@ -34,6 +34,16 @@
         <input type="submit" value="Register">
 
     </form>
-
+    <script>
+    let err= window.location.search;
+    let errar = err.split("=");
+    console.log(errar[1]);
+    if (errar[1])
+    {
+         document.body.innerHTML +=errar[1];
+    }
+       
+    
+    </script>
 </body>
 </html>
