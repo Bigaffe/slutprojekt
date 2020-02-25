@@ -31,6 +31,7 @@ app.post("/register",function(req,res){
     let username = req.body.username;
     let email = req.body.email;
     let password = req.body.password;
+    let img = req.body.profilepicture;
     users.findOne({email:req.body.email}, function(err,user){
         
     //users.find({email:req.body.email}).toArray(function(err,user){
@@ -48,7 +49,7 @@ app.post("/register",function(req,res){
      
                 password = hash;
                 
-                let user = {username,email,password};
+                let user = {username,email,password,img};
                 console.log(user);
                 users.insert(user, (err, result)=>{
                     console.log(err);
@@ -142,6 +143,8 @@ app.get("/post",function(req,res){
 })
 
 app.post("/post", function(req,res){
+    //console.log('hejehehe',req.body);
+    
 
     var today = new Date();
     //var tt = String(today.getTime()).padStart(2, '0');
@@ -152,11 +155,17 @@ app.post("/post", function(req,res){
 
     let title = req.body.title;
     let picture = req.body.picture;
-    console.log(title,picture,today);
+    let text = req.body.text;
+
+    //var text = document.createElement("txtArea");
+    //var text = document.getElementById("txtArea");
+    //let text = req.body.txtArea.value;
+
+    console.log(title,picture,today,text);
 
     
 
-    res.send(postTemp(title,picture,today));
+    res.send(postTemp(title,picture,today,text));
     //let username
     //let time
 })

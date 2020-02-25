@@ -1,4 +1,4 @@
-module.exports = function(title,picture,today){
+module.exports = function(title,picture,today,text){
     return `
     <!DOCTYPE html>
     <html lang="sv">
@@ -12,10 +12,11 @@ module.exports = function(title,picture,today){
         <h1>${title}</h1>
         <h5>${today}</h5>
         <img src="${picture}">
-        <p>
+        <p>${text}</p>
+        
     
     
-        </p>
+        
     
     </body>
     </html>
