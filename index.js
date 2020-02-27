@@ -18,6 +18,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
 
 app.get("/",function(req,res){
+    //let token = jwt.verify(req.cookies.token,secret);
+    //console.log(token);
     res.sendFile(__dirname+"/homeform.html");
     //res.send(req.cookies);
 });
@@ -35,7 +37,7 @@ app.post("/register",function(req,res){
     users.findOne({email:req.body.email}, function(err,user){
         
     //users.find({email:req.body.email}).toArray(function(err,user){
-        //Kommenterade boty user.length och find för att de inte fungerade som de skulle och satte in samma setup som login
+        //Kommenterade body user.length och find för att de inte fungerade som de skulle och satte in samma setup som login
         
         
         if (user )
@@ -83,18 +85,18 @@ app.post("/login",function(req,res){
     // Hämta våra användare från db/fil
 
     users.findOne({email:req.body.email}, function(err,user){
-        console.log("1");
+        //console.log("1");
 
         if (user ){
 
             bcrypt.compare(req.body.password,user.password,function(err,success){
                 console.log(success);
-                console.log("2")
+                //console.log("2")
     
                 if(success){
                     
                     // res.cookie("auth",true,{httpOnly:true,sameSite:"strict"});
-                    console.log("3")
+                    //console.log("3")
                     const token = jwt.sign({email:user.email},secret,{expiresIn:3600});
                     res.cookie("token",token,{httpOnly:true,sameSite:"strict",maxAge:3600000}); 
                     res.redirect("/?loginSuccess");
@@ -152,6 +154,27 @@ app.post("/post", function(req,res){
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
     today = dd + '/' + mm + '/' + yyyy;
+    
+
+    let token = jwt.verify(req.cookies.token,secret);
+    let mail = token.email;
+
+    users.findOne({email:mail}),function(err,user){
+        if(user){
+            bcrypt.compare(req.body.password,user.username,function(err,success){
+                
+            }
+        }
+
+
+    }
+
+    console.log(token,mail);
+
+    //let token = jwt.verify(req.cookies.token);
+    //console.log(token);
+
+
 
     let title = req.body.title;
     let picture = req.body.picture;

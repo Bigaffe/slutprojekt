@@ -3,4 +3,4 @@ git commit -m ""
 git push origin master
 
 
-ta reda på vem som är inloggad just nu via webtoken
+Ta reda på vem som är inloggad just nu via webtoken
