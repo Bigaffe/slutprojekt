@@ -141,7 +141,14 @@ app.get("/posts",function(req,res){
     res.sendFile(__dirname + "/posts.html");
 })
 app.get("/post",function(req,res){
-    res.sendFile(__dirname + "/postform.html");
+    if(req.cookies.token !== null && req.cookies.token !== undefined ){
+        
+        res.sendFile(__dirname + "/postform.html");
+    }
+    else {
+        res.redirect("/?err");
+    }
+    
 })
 
 app.post("/post", function(req,res){
@@ -159,15 +166,26 @@ app.post("/post", function(req,res){
     let token = jwt.verify(req.cookies.token,secret);
     let mail = token.email;
 
-    users.findOne({email:mail}),function(err,user){
+    users.findOne({email:mail},function(err,user){
         if(user){
             bcrypt.compare(req.body.password,user.username,function(err,success){
+                bcrypt.compare(req.body.password,user.img,function(err,success){
                 
-            }
+                let poster = user.username;
+                let posterimg = user.img;
+                let title = req.body.title;
+                let picture = req.body.picture;
+                let text = req.body.text;
+                console.log("person:",user.username,user.img)
+                console.log("inlägg:",title,picture,today,text);
+
+                res.send(postTemp(title,picture,today,text,poster,posterimg));
+                })
+            })
         }
+    
 
-
-    }
+    })
 
     console.log(token,mail);
 
@@ -176,19 +194,17 @@ app.post("/post", function(req,res){
 
 
 
-    let title = req.body.title;
-    let picture = req.body.picture;
-    let text = req.body.text;
+    
 
     //var text = document.createElement("txtArea");
     //var text = document.getElementById("txtArea");
     //let text = req.body.txtArea.value;
 
-    console.log(title,picture,today,text);
+    
 
     
 
-    res.send(postTemp(title,picture,today,text));
+    
     //let username
     //let time
 })

@@ -16,3 +16,9 @@
 {"k":"0000000078","o":"0000000316","v":"001"}
 {"_id":9,"_uid":9,"_dt":1582800182659,"_s":"1ca74018e22b179f8fce8731a400aef9"}
 {"username":"Never Gonna Give you up","email":"abc@123.se","password":"$2a$12$ylCzXOtLcE5O7gAH//tPLesbyZB0D3TkrU2nXTMyt05SSs3CkOJKq","img":"https://www.kamerabild.se/sites/kamerabild.se/files/styles/article_image/public/field/image/skarmavbild_2019-06-10_kl._08.25.30.png?itok=pPkJz20Q","_id":{"$wrap":"$oid","v":9}}
+{"k":"0000000080","o":"0000000269","v":"001"}
+{"_id":10,"_uid":10,"_dt":1583222732536,"_s":"60c6f464d90538db860301fd0b9a15f2"}
+{"username":"Testing","email":"klocka@gmail.com","password":"$2a$12$eA88cbN20Idw5nPEESBQQOL58sYREmL3Fc4WsBF2G.TiHHOZh5.Q2","img":"https://www.klockor.se/media/catalog/product/cache/4/image/9df78eab33525d08d6e5fb8d27136e95/q/x/qxa700w.jpg","_id":{"$wrap":"$oid","v":10}}
+{"k":"0000000080","o":"0000000296","v":"001"}
+{"_id":11,"_uid":11,"_dt":1583223033366,"_s":"b943c7789fdc30b78d6c386cb472a30d"}
+{"username":"ralleman_gunner","email":"rasist@ralle.se","password":"$2a$12$t4AvNWBlLw.kXdNHdRCcp.O0T0JgYDClhlp/97rABh2rYeqARjGeO","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Stridsvagn_102_Revinge_2013.jpg/250px-Stridsvagn_102_Revinge_2013.jpg","_id":{"$wrap":"$oid","v":11}}
