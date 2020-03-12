@@ -1,15 +1,3 @@
-{"k":"0000000078","o":"0000000151","v":"001"}
-{"_id":2,"_uid":2,"_dt":1580803633165,"_s":"fa58fedb0daeb40d89d96207bd8cfc99"}
-{"username":"affepaffe","email":"lars@lasse.se","password":"$2a$12$AfZMB0rhNStJcyV5Jk9J6eT37y1ydETUz78XBUTs2lCO1.CaYla9u","_id":{"$wrap":"$oid","v":2}}
-{"k":"0000000078","o":"0000000161","v":"001"}
-{"_id":3,"_uid":3,"_dt":1580985234935,"_s":"fb0006ac9e7fc9b8283ff1475905c26f"}
-{"username":"Cabbeh","email":"cashen0116@edu.halmstad.se","password":"$2a$12$R7rOgVAd4V/VmKbWF1kMf.l8QPf5kFkWFZbx2n3/XzKmI4CN/StFy","_id":{"$wrap":"$oid","v":3}}
-{"k":"0000000078","o":"0000000150","v":"001"}
-{"_id":6,"_uid":6,"_dt":1580985387955,"_s":"71522862ec230f7a1d8c81b12b2335d5"}
-{"username":"asfasf","email":"afsfa@gmail.com","password":"$2a$12$Cdjeii0iqYAezH2s.6c1seOu5SvA2lGxEgCYMfWOH.wz/vVgBpZUG","_id":{"$wrap":"$oid","v":6}}
-{"k":"0000000078","o":"0000000147","v":"001"}
-{"_id":7,"_uid":7,"_dt":1581405404267,"_s":"d0ff19da4c0ac263b4b99728321c1b97"}
-{"username":"mus","email":"hasse@lasses.se","password":"$2a$12$4HiIc87hW0RpV0OdG9yVeehussaqKldvvcKzGDep1DNO.EIIki2p2","_id":{"$wrap":"$oid","v":7}}
 {"k":"0000000078","o":"0000000305","v":"001"}
 {"_id":8,"_uid":8,"_dt":1582618951966,"_s":"f95af0fa29bda7e4a86813b9bd71f33d"}
 {"username":"affepaffe","email":"test@mail.com","password":"$2a$12$A4AtukLhFnP.PGL7afJLie2Up5O2QnvKnXQwxWG1kIuCH4YuGyzPq","img":"https://www.kamerabild.se/sites/kamerabild.se/files/styles/article_image/public/field/image/skarmavbild_2019-06-10_kl._08.25.30.png?itok=pPkJz20Q","_id":{"$wrap":"$oid","v":8}}
@@ -22,3 +10,9 @@
 {"k":"0000000080","o":"0000000296","v":"001"}
 {"_id":11,"_uid":11,"_dt":1583223033366,"_s":"b943c7789fdc30b78d6c386cb472a30d"}
 {"username":"ralleman_gunner","email":"rasist@ralle.se","password":"$2a$12$t4AvNWBlLw.kXdNHdRCcp.O0T0JgYDClhlp/97rABh2rYeqARjGeO","img":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Stridsvagn_102_Revinge_2013.jpg/250px-Stridsvagn_102_Revinge_2013.jpg","_id":{"$wrap":"$oid","v":11}}
+{"k":"0000000080","o":"0000000145","v":"001"}
+{"_id":12,"_uid":12,"_dt":1584010288888,"_s":"5803180cf95dba7e311d2d07c3e7fa86"}
+{"username":"Cabbeh","email":"","password":"$2a$12$TnFqIrZvx3Dm9RER.W4OGuOCbVQBq6/1G1W9xsmMxgNQ9khiEehim","img":"","_id":{"$wrap":"$oid","v":12}}
+{"k":"0000000080","o":"0000000292","v":"001"}
+{"_id":13,"_uid":13,"_dt":1584010312482,"_s":"0b9bb8a7e743b169d50fe56d2dc2000a"}
+{"username":"Cabbeh","email":"cashen0116@edu.halmstad.se","password":"$2a$12$APDOE3F94bpqFLiXMyCojeNE2yAamuzEazH5HlRrjYZznveHKcsfS","img":"https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ff/ff38989e433470f91220574fe09a8a09b9a0862b_full.jpg","_id":{"$wrap":"$oid","v":13}}

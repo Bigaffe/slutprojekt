@@ -11,6 +11,7 @@ const Db = require('tingodb')().Db;
 const db = new Db(__dirname+'/database', {});
 // Fetch a collection to insert document into
 const users = db.collection("users");
+const posts = db.collection("posts");
 
 const app = express();
 
@@ -138,8 +139,26 @@ app.post("/login",function(req,res){
 //Hem menyn_______________________________________________________________________________________________________________________________
 
 app.get("/posts",function(req,res){
-    res.sendFile(__dirname + "/posts.html");
+   // res.sendFile(__dirname + "/posts.html");
+
+
+
+
+
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
 app.get("/post",function(req,res){
     if(req.cookies.token !== null && req.cookies.token !== undefined ){
         
@@ -160,6 +179,7 @@ app.post("/post", function(req,res){
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
+
     today = dd + '/' + mm + '/' + yyyy;
     
 
@@ -167,46 +187,34 @@ app.post("/post", function(req,res){
     let mail = token.email;
 
     users.findOne({email:mail},function(err,user){
-        if(user){
-            bcrypt.compare(req.body.password,user.username,function(err,success){
-                bcrypt.compare(req.body.password,user.img,function(err,success){
+        if(user)
+        {
+      /*       bcrypt.compare(req.body.password,user.username,function(err,success){
+                bcrypt.compare(req.body.password,user.img,function(err,success){ */
                 
                 let poster = user.username;
+                let userid = user._id;
                 let posterimg = user.img;
                 let title = req.body.title;
                 let picture = req.body.picture;
                 let text = req.body.text;
+
+                posts.insert({userid,poster,posterimg,title,picture,text,today},function(err){
+                    if(err){res.send("errror")}
+                    else {res.send(postTemp(title,picture,today,text,poster,posterimg));}
+                });
+
                 console.log("person:",user.username,user.img)
                 console.log("inlägg:",title,picture,today,text);
 
-                res.send(postTemp(title,picture,today,text,poster,posterimg));
-                })
-            })
-        }
-    
+              
 
-    })
+        }
 
     console.log(token,mail);
 
-    //let token = jwt.verify(req.cookies.token);
-    //console.log(token);
+})
 
-
-
-    
-
-    //var text = document.createElement("txtArea");
-    //var text = document.getElementById("txtArea");
-    //let text = req.body.txtArea.value;
-
-    
-
-    
-
-    
-    //let username
-    //let time
 })
 
 // kollar om systemet har en angiven port, annars 3700..._______________________________________________________________________________
