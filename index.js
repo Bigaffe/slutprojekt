@@ -4,7 +4,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
-const secret = require("./secret");
+//const secret = require("./secret");
 const postTemp = require("./posts.js");
 const Db = require('tingodb')().Db;
  
