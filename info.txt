@@ -3,9 +3,9 @@ git commit -m ""
 git push origin master
 
 
-Done -Ta reda på vem som är inloggad just nu via webtoken
+Done - Ta reda på vem som är inloggad just nu via webtoken
 
-Minska storleken på bilderna
+Done - Minska storleken på bilderna
 /posts ska ta data från database/posts sedan ranga upp varje inlägg efter nyast till äldst
 
 Funktion att den som har gjort inlägget kan gå in och sedan få möjligheten att ta bort inlägget och även ändra det.

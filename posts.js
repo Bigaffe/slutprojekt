@@ -9,10 +9,16 @@ module.exports = function(title,picture,today,text,poster,posterimg){
         <title>Document</title>
     </head>
     <body>
-        <h4><img src="${posterimg}">${poster}<h4>
-        <h1>${title}</h1>
+        <button onclick="window.location='/'" style="height:80px; width:100px;">Home</button>
+        <button onclick="window.location='/login'" style="height:80px; width:100px;">Login</button>
+        <button onclick="window.location='/register'" style="height:80px; width:100px;">Register</button>
+        <button onclick="window.location='/post'" style="height:80px; width:100px;">Post something</button>
+        <button onclick="window.location='/posts'" style="height:80px; width:100px;">Posts</button>
+
+        <h4><img src="${posterimg}" style="width:75px; height:75px;">${poster}<h4>
+        <h1 style="color:blue;">${title}</h1>
         <h5>${today}</h5>
-        <img src="${picture}">
+        <img src="${picture}" style="width:300px; height:300px;">
         <p>${text}</p>
         
     

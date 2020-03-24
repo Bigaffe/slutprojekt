@@ -22,3 +22,6 @@
 {"k":"0000000080","o":"0000000225","v":"001"}
 {"_id":15,"_uid":15,"_dt":1584617939491,"_s":"799d4f0c51af29091d76fa4f51bb6fbf"}
 {"username":"Sve","email":"svea@rike.se","password":"$2a$12$r90L4IiM6ab8eZH6.ukTzOaUPIG9qjuF31ILrxv6yxkpuzIZqvwTO","img":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","_id":{"$wrap":"$oid","v":15}}
+{"k":"0000000080","o":"0000000229","v":"001"}
+{"_id":16,"_uid":16,"_dt":1585034156880,"_s":"14e2e210e7492ca7879c8588736353c6"}
+{"username":"Benk","email":"goran@gmail.com","password":"$2a$12$gm9xjSSq/qNMHC4iiZjKHuyZVZQBstgssiv7XR5AuY4EVFu.yhk5y","img":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","_id":{"$wrap":"$oid","v":16}}
