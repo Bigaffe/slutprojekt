@@ -25,3 +25,9 @@
 {"k":"0000000080","o":"0000000229","v":"001"}
 {"_id":16,"_uid":16,"_dt":1585034156880,"_s":"14e2e210e7492ca7879c8588736353c6"}
 {"username":"Benk","email":"goran@gmail.com","password":"$2a$12$gm9xjSSq/qNMHC4iiZjKHuyZVZQBstgssiv7XR5AuY4EVFu.yhk5y","img":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","_id":{"$wrap":"$oid","v":16}}
+{"k":"0000000080","o":"0000000260","v":"001"}
+{"_id":17,"_uid":17,"_dt":1585821060600,"_s":"6a133e60ea637045a1d3c1a3547be7ed"}
+{"username":"kallebanan","email":"cabbe.h01@gmail.com","password":"$2a$12$SSIlYXSn7SOxnZ3Et/a/8OgqaOh7JrultZnvW17bx8AD35KbWbzNG","img":"https://www.agria.se/imagevault/publishedmedia/ehwczsld9vmpkg95abvo/kitten-under-blanket.jpg","_id":{"$wrap":"$oid","v":17}}
+{"k":"0000000080","o":"0000000224","v":"001"}
+{"_id":18,"_uid":18,"_dt":1585821295991,"_s":"6e1ab13bdeed8dffca0731f87856a40b"}
+{"username":"ras","email":"ras@ras.ras","password":"$2a$12$Ptx0wW6DBznzwn/YqK3.4efn6EjTqXdHuJuWNBzEBNRS8FWO5X51u","img":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","_id":{"$wrap":"$oid","v":18}}

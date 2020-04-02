@@ -17,6 +17,7 @@ const app = express();
 
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
+app.use(express.static(__dirname+'/public'))
 
 app.get("/",function(req,res){
     //let token = jwt.verify(req.cookies.token,secret);
@@ -124,27 +125,42 @@ app.post("/login",function(req,res){
 
 //Hem menyn_______________________________________________________________________________________________________________________________
 
-app.get("/posts",function(req,res){
-   // res.sendFile(__dirname + "/posts.html");
+app.get("/posts",async function(req,res){
+   //res.sendFile(__dirname + "/posts.html");
+  /*posts.findOne({_id:2}, function(err, p){
+    console.log(p)
+    
+  })*/
+  
+  let temp ="";
+  posts.find({}).toArray(function(err, result) {
+    /*console.log(result[0])
+    console.log(result[1])
+    for(let i = 0; i < result.length; i++){
+      temp+= '<img src="' + result[i].picture +'"/>';
+    }
 
+    
 
+    result.foreach(p =>{
+      //temp+= "<img src="+p.posterimg +"/>";
+      console.log(p)
+    })*/
+    res.send(postTemp(result));
+  });
 
+  //console.log(temp)
+  
 
 
 })
 
+app.post("/posts", function(req,res){
 
 
+})
 
-
-
-
-
-
-
-
-
-
+//--------------------------------------------------------------------------------------------
 app.get("/post",function(req,res){
     if(req.cookies.token !== null && req.cookies.token !== undefined ){
         
@@ -186,7 +202,7 @@ app.post("/post", function(req,res){
                 let text = req.body.text;
 
                 posts.insert({userid,poster,posterimg,title,picture,text,today},function(err){
-                    if(err){res.send("errror")}
+                    if(err){res.send("error")}
                     else {res.send(postTemp(title,picture,today,text,poster,posterimg));}
                 });
 
