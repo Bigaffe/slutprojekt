@@ -1,12 +1,12 @@
-{"k":"0000000078","o":"0000000332","v":"001"}
-{"_id":2,"_uid":2,"_dt":1585821728623,"_s":"600935e0a169c7a0179aa74cb502ceab"}
-{"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"ras","picture":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRkO_ghtTXLk5Cd1xm6G5gY2BTmd_0EfibsCvqHxswPGpXQHD4i","text":" ras","today":"02/04/2020","_id":{"$wrap":"$oid","v":2}}
-{"k":"0000000078","o":"0000000343","v":"001"}
-{"_id":3,"_uid":3,"_dt":1585821770430,"_s":"dc9e6d23df3bfb4ad1f5a10cc6ee0a9a"}
-{"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Du är  ful","picture":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRkO_ghtTXLk5Cd1xm6G5gY2BTmd_0EfibsCvqHxswPGpXQHD4i","text":" Rasmus","today":"02/04/2020","_id":{"$wrap":"$oid","v":3}}
 {"k":"0000000078","o":"0000000362","v":"001"}
 {"_id":4,"_uid":4,"_dt":1585823028726,"_s":"07e68aaede8c8b37c8d5f972449499f0"}
 {"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Detta är ett test","picture":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRkO_ghtTXLk5Cd1xm6G5gY2BTmd_0EfibsCvqHxswPGpXQHD4i","text":" Detta är ett test","today":"02/04/2020","_id":{"$wrap":"$oid","v":4}}
 {"k":"0000000078","o":"0000000451","v":"001"}
 {"_id":5,"_uid":5,"_dt":1585824706744,"_s":"11712f7de7ff2792ce34a0b5d81bb7af"}
 {"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"CApser har gjoty","picture":"https://imengine.lrf.infomaker.io/?uuid=4cc92e53-8973-4919-95b9-97f0e8e3480a&type=preview&source=&function=fit&width=630&height=434&q=80&maxsize=630&name=ko_a61164k11270b5cd28km7ffc-jpg","text":" Detta är en bild på ett djur","today":"02/04/2020","_id":{"$wrap":"$oid","v":5}}
+{"k":"0000000078","o":"0000000312","v":"001"}
+{"_id":6,"_uid":6,"_dt":1586845668125,"_s":"7763732001e5dbd88a7be226c8993b8e"}
+{"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Fluga","picture":"https://upload.wikimedia.org/wikipedia/commons/a/a7/Conopidae_fg1.jpg","text":" Detta är en fluga","today":"14/04/2020","_id":{"$wrap":"$oid","v":6}}
+{"k":"0000000078","o":"0000000691","v":"001"}
+{"_id":9,"_uid":9,"_dt":1586846913056,"_s":"360aaf7769ff3ecaf09b4016c37ecbb6"}
+{"userid":{"$wrap":"$oid","v":19},"poster":"lol","posterimg":"https://estnn.com/wp-content/uploads/2020/01/league-of-legends-header-x-1200x900.jpg","title":"New dragon","picture":"https://am-a.akamaihd.net/image?quality=preserve&f=https://lolstatic-a.akamaihd.net/frontpage/apps/prod/playnow-global/en_US/328566a634ec929c4fc0ec5507c3b42a3bd4fb36/assets/img/cover-1.jpg","text":" In the next update there is a cool looking dragon that might like sheep. I'm unsure of this but it's just a guess, and I'm no guest but I have no problem if you would be my guest, if you only you can guess right on my question. It's a bit tricky... What's 1+1?","today":"14/04/2020","_id":{"$wrap":"$oid","v":9}}

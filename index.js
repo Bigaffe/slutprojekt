@@ -168,6 +168,7 @@ app.get("/post",function(req,res){
     }
     else {
         res.redirect("/?err");
+        
     }
     
 })
@@ -175,15 +176,14 @@ app.get("/post",function(req,res){
 app.post("/post", function(req,res){
     //console.log('hejehehe',req.body);
     
-
+  //Datum------------------------------------------------------
     var today = new Date();
     //var tt = String(today.getTime()).padStart(2, '0');
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
-
     today = dd + '/' + mm + '/' + yyyy;
-    
+    //---------------------------------------------------------
 
     let token = jwt.verify(req.cookies.token,secret);
     let mail = token.email;
@@ -203,7 +203,7 @@ app.post("/post", function(req,res){
 
                 posts.insert({userid,poster,posterimg,title,picture,text,today},function(err){
                     if(err){res.send("error")}
-                    else {res.send(postTemp(title,picture,today,text,poster,posterimg));}
+                    else {res.redirect("/posts");}
                 });
 
                 console.log("person:",user.username,user.img)

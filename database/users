@@ -31,3 +31,6 @@
 {"k":"0000000080","o":"0000000224","v":"001"}
 {"_id":18,"_uid":18,"_dt":1585821295991,"_s":"6e1ab13bdeed8dffca0731f87856a40b"}
 {"username":"ras","email":"ras@ras.ras","password":"$2a$12$Ptx0wW6DBznzwn/YqK3.4efn6EjTqXdHuJuWNBzEBNRS8FWO5X51u","img":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","_id":{"$wrap":"$oid","v":18}}
+{"k":"0000000080","o":"0000000237","v":"001"}
+{"_id":19,"_uid":19,"_dt":1586846814256,"_s":"66bf725ae588f442f8fde45c8e769647"}
+{"username":"lol","email":"lol@lol.lol","password":"$2a$12$byo3GNLzFOiekmISsc5OLumSJG6WDf.j84KK4/2359ao0YWSx56K.","img":"https://estnn.com/wp-content/uploads/2020/01/league-of-legends-header-x-1200x900.jpg","_id":{"$wrap":"$oid","v":19}}

@@ -1,13 +1,15 @@
 module.exports = function(posts){
   //title,picture,today,text,poster,posterimg
   let postsString = "";
+  var postlength = posts.length
   for(let i = 0; i < posts.length; i++){
+      postlength = postlength - 1;
     postsString += `
-      <h4><img src="${posts[i].posterimg}" style="width:75px; height:75px;">${posts[i].poster}<h4>
-        <h1 style="color:blue;">${posts[i].title}</h1>
-        <h5>${posts[i].today}</h5>
-        <img src="${posts[i].picture}" style="width:300px; height:300px;">
-        <p>${posts[i].text}</p>
+      <h4><img src="${posts[postlength].posterimg}" style="width:75px; height:75px;">${posts[postlength].poster}<h4>
+        <h1 style="color:blue;">${posts[postlength].title}</h1>
+        <h5>${posts[postlength].today}</h5>
+        <img src="${posts[postlength].picture}" style="width:300px; height:300px;">
+        <p>${posts[postlength].text}</p>
         <hr>
 
     `
@@ -17,7 +19,7 @@ module.exports = function(posts){
     <!DOCTYPE html>
     <html lang="sv">
     <head>
-
+        <title> Posts </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
