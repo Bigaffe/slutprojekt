@@ -1,15 +1,23 @@
-module.exports = function(posts){
+module.exports = function(posts, editState = false){
   //title,picture,today,text,poster,posterimg
   let postsString = "";
   var postlength = posts.length
+  
+  
+
   for(let i = 0; i < posts.length; i++){
+    var editControls = ""
+    if(editState){
+      editControls = `<button onclick="window.location='/edit/${12}'" style="height:80px; width:100px;">Edit</button>`;
+    }
       postlength = postlength - 1;
     postsString += `
       <h4><img src="${posts[postlength].posterimg}" style="width:75px; height:75px;">${posts[postlength].poster}<h4>
         <h1 style="color:blue;">${posts[postlength].title}</h1>
         <h5>${posts[postlength].today}</h5>
         <img src="${posts[postlength].picture}" style="width:300px; height:300px;">
-        <p>${posts[postlength].text}</p>
+        <p>${posts[postlength].text}</p><br>
+        ${editControls}
         <hr>
 
     `

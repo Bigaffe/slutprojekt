@@ -99,7 +99,7 @@ app.post("/login",function(req,res){
                     
                     // res.cookie("auth",true,{httpOnly:true,sameSite:"strict"});
                     //console.log("3")
-                    const token = jwt.sign({email:user.email},secret,{expiresIn:3600});
+                    const token = jwt.sign({email:user.email, password: user.password},secret,{expiresIn:3600});
                     res.cookie("token",token,{httpOnly:true,sameSite:"strict",maxAge:3600000}); 
                     res.redirect("/?loginSuccess");
                     //Ändra till hem menyn
@@ -161,19 +161,13 @@ app.post("/posts", function(req,res){
 })
 
 //--------------------------------------------------------------------------------------------
-app.get("/post",function(req,res){
-    if(req.cookies.token !== null && req.cookies.token !== undefined ){
-        
-        res.sendFile(__dirname + "/postform.html");
-    }
-    else {
-        res.redirect("/?err");
-        
-    }
-    
+app.get("/post",validate,function(req,res){
+
+    res.sendFile(__dirname + "/postform.html");
+
 })
 
-app.post("/post", function(req,res){
+app.post("/post", validate, function(req,res){
     //console.log('hejehehe',req.body);
     
   //Datum------------------------------------------------------
@@ -194,20 +188,20 @@ app.post("/post", function(req,res){
       /*       bcrypt.compare(req.body.password,user.username,function(err,success){
                 bcrypt.compare(req.body.password,user.img,function(err,success){ */
                 
-                let poster = user.username;
-                let userid = user._id;
-                let posterimg = user.img;
-                let title = req.body.title;
-                let picture = req.body.picture;
-                let text = req.body.text;
+          let poster = user.username;
+          let userid = user._id;
+          let posterimg = user.img;
+          let title = req.body.title;
+          let picture = req.body.picture;
+          let text = req.body.text;
 
-                posts.insert({userid,poster,posterimg,title,picture,text,today},function(err){
-                    if(err){res.send("error")}
-                    else {res.redirect("/posts");}
-                });
+          posts.insert({userid,poster,posterimg,title,picture,text,today},function(err){
+              if(err){res.send("error")}
+              else {res.redirect("/posts");}
+          });
 
-                console.log("person:",user.username,user.img)
-                console.log("inlägg:",title,picture,today,text);
+          console.log("person:",user.username,user.img)
+          console.log("inlägg:",title,picture,today,text);
 
               
 
@@ -219,6 +213,86 @@ app.post("/post", function(req,res){
 
 })
 
+app.get("/myposts",validate,function(req,res){
+  //res.send("hej");
+
+  let token = jwt.verify(req.cookies.token,secret);
+  let mail = token.email;
+
+    users.findOne({email:mail},function(err,user){
+      if(user)
+      {
+      /*       bcrypt.compare(req.body.password,user.username,function(err,success){
+                bcrypt.compare(req.body.password,user.img,function(err,success){ */
+          let p = user.username;
+          /*posts.findOne({poster:p},function(err,posts){
+            console.log("err " + err);
+            console.log("len " + users);
+
+          });*/
+          posts.find({poster:p}).toArray(function(err, result) {
+    
+            console.log(result)
+            res.send(postTemp(result, true));
+          });
+              
+
+      }
+
+    console.log(token,mail);
+
+  })
+})
+
+app.post("/myposts",validate,function(req,res){
+  
+})
+
+
+
+
+
+
+
+
+function validate(req, res , next){
+  //console.log(req.cookies.token);
+  jwt.verify(req.cookies.token, secret, function(err, decoded) {
+    //console.log(decoded) // bar
+
+    if(!err){
+      users.findOne({email:decoded.email}, function(err,user){
+        //console.log("1");
+        //console.log(user)
+        if (user ){
+          
+
+          if(decoded.password === user.password){
+              console.log("jaaaaaaa");
+              //console.log("2")
+              next();
+             
+              
+          }
+          else{
+            res.redirect("/login");
+          } 
+        }
+        else {
+            res.redirect("/login");
+        }        
+      });
+    }else{
+      res.redirect("/login");
+    }
+  });
+}
+
+
+
 // kollar om systemet har en angiven port, annars 3700..._______________________________________________________________________________
+
+
+
 const port = process.env.PORT || 3700
 app.listen(port, function(){console.log("port:" +port)});
