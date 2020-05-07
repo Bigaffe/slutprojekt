@@ -6,13 +6,20 @@ module.exports = function(posts){
   
 
   for(let i = 0; i < posts.length; i++){
-      postlength = postlength - 1;
+  postlength = postlength -1;
+
+    console.log(posts[postlength]._id.id);
+    var editControls = `<button onclick="window.location='/edit/${posts[postlength]._id.id}'" style="height:80px; width:100px;">Edit</button>`;
+    var deleteControls = `<button onclick="window.location='/delete/${posts[postlength]._id.id}'" style="height:80px; width:100px;">Delete</button>`;
+    
+      
     postsString += `
       <h4><img src="${posts[postlength].posterimg}" style="width:75px; height:75px;">${posts[postlength].poster}<h4>
         <h1 style="color:blue;">${posts[postlength].title}</h1>
         <h5>${posts[postlength].today}</h5>
         <img src="${posts[postlength].picture}" style="width:300px; height:300px;">
         <p>${posts[postlength].text}</p><br>
+        ${editControls} ${deleteControls} 
         <hr>
 
     `

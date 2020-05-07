@@ -1,5 +1,6 @@
+module.exports = function(id, titel, picture, text){
 
-<!DOCTYPE html>
+return `<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="/posts.css">
@@ -15,18 +16,19 @@
         <button onclick="window.location='/post'" style="height:80px; width:100px;">Post something</button>
         <button onclick="window.location='/posts'" style="height:80px; width:100px;">Posts</button>
         <button onclick="window.location='/myposts'" style="height:80px; width:100px;">My Posts</button>
-        <h2>Write a post here</h2>
+        <h2>Edit</h2>
         <!--<form action="/login" method="post">-->
             
-            <form action="/post" method="post">
+            <form action="/edit/${id}" method="post">
     
-            <input type="text" name="title" placeholder="title" >
-            <input type="img" name="picture" placeholder="picture(URL)">
-            <textarea id="txtArea" name="text" rows="10" cols="70"> </textarea>
-            <input type="submit" value="Post">
+            <input type="text" name="title" placeholder="title" value="${titel}">
+            <input type="img" name="picture" placeholder="picture(URL)" value="${picture}">
+            <textarea id="txtArea" name="text" rows="10" cols="70">${text}</textarea>
+            <input type="submit" value="Edit">
             </form>
             
             
 
 </body>
-</html>
+</html>`
+}

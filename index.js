@@ -6,7 +6,10 @@ const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
 const secret = require("./secret");
 const postTemp = require("./posts.js");
+const myPostTemp = require("./myposts.js");
 const Db = require('tingodb')().Db;
+const engine = require("tingodb")({});
+const edit = require("./edit.js");
  
 const db = new Db(__dirname+'/database', {});
 // Fetch a collection to insert document into
@@ -58,11 +61,18 @@ app.post("/register",function(req,res){
                 users.insert(user, (err, result)=>{
                     console.log(err);
                     console.log(result);
+                    if(result){
+                      const token = jwt.sign({email:user.email, password: user.password},secret,{expiresIn:3600});
+                      res.cookie("token",token,{httpOnly:true,sameSite:"strict",maxAge:3600000}); 
+                      res.redirect("/posts");
+                    }else{
+                      res.redirect("/register");
+                    }
                     
                 });
                 
 
-                res.redirect("/login");
+                //res.redirect("/login");
             });
 
         }
@@ -87,18 +97,14 @@ app.post("/login",function(req,res){
     // Hämta våra användare från db/fil
 
     users.findOne({email:req.body.email}, function(err,user){
-        //console.log("1");
 
         if (user ){
 
             bcrypt.compare(req.body.password,user.password,function(err,success){
                 console.log(success);
-                //console.log("2")
+
     
                 if(success){
-                    
-                    // res.cookie("auth",true,{httpOnly:true,sameSite:"strict"});
-                    //console.log("3")
                     const token = jwt.sign({email:user.email, password: user.password},secret,{expiresIn:3600});
                     res.cookie("token",token,{httpOnly:true,sameSite:"strict",maxAge:3600000}); 
                     res.redirect("/?loginSuccess");
@@ -126,30 +132,12 @@ app.post("/login",function(req,res){
 //Hem menyn_______________________________________________________________________________________________________________________________
 
 app.get("/posts",async function(req,res){
-   //res.sendFile(__dirname + "/posts.html");
-  /*posts.findOne({_id:2}, function(err, p){
-    console.log(p)
-    
-  })*/
   
   let temp ="";
   posts.find({}).toArray(function(err, result) {
-    /*console.log(result[0])
-    console.log(result[1])
-    for(let i = 0; i < result.length; i++){
-      temp+= '<img src="' + result[i].picture +'"/>';
-    }
-
-    
-
-    result.foreach(p =>{
-      //temp+= "<img src="+p.posterimg +"/>";
-      console.log(p)
-    })*/
     res.send(postTemp(result));
   });
 
-  //console.log(temp)
   
 
 
@@ -168,11 +156,9 @@ app.get("/post",validate,function(req,res){
 })
 
 app.post("/post", validate, function(req,res){
-    //console.log('hejehehe',req.body);
     
   //Datum------------------------------------------------------
     var today = new Date();
-    //var tt = String(today.getTime()).padStart(2, '0');
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0');
     var yyyy = today.getFullYear();
@@ -185,8 +171,7 @@ app.post("/post", validate, function(req,res){
     users.findOne({email:mail},function(err,user){
         if(user)
         {
-      /*       bcrypt.compare(req.body.password,user.username,function(err,success){
-                bcrypt.compare(req.body.password,user.img,function(err,success){ */
+      
                 
           let poster = user.username;
           let userid = user._id;
@@ -214,7 +199,7 @@ app.post("/post", validate, function(req,res){
 })
 
 app.get("/myposts",validate,function(req,res){
-  //res.send("hej");
+  
 
   let token = jwt.verify(req.cookies.token,secret);
   let mail = token.email;
@@ -222,18 +207,12 @@ app.get("/myposts",validate,function(req,res){
     users.findOne({email:mail},function(err,user){
       if(user)
       {
-      /*       bcrypt.compare(req.body.password,user.username,function(err,success){
-                bcrypt.compare(req.body.password,user.img,function(err,success){ */
+      
           let p = user.username;
-          /*posts.findOne({poster:p},function(err,posts){
-            console.log("err " + err);
-            console.log("len " + users);
-
-          });*/
+          
           posts.find({poster:p}).toArray(function(err, result) {
-    
-            console.log(result)
-            res.send(postTemp(result, true));
+
+            res.send(myPostTemp(result));
           });
               
 
@@ -268,8 +247,7 @@ function validate(req, res , next){
           
 
           if(decoded.password === user.password){
-              console.log("jaaaaaaa");
-              //console.log("2")
+              
               next();
              
               
@@ -287,6 +265,25 @@ function validate(req, res , next){
     }
   });
 }
+//-------------------------------------------------------------------------------------
+
+app.get("/edit/:id",validate,function(req,res){
+  posts.findOne({_id:req.params.id},function(err,result){
+      if(result)
+      {
+        res.send(edit(req.params._id, result.title, result.picture, result.text))  
+      }
+  })
+  
+  
+
+
+})
+
+
+app.get("/delete/:_id",validate,function(req,res){
+  res.send(req.params._id)
+})
 
 
 
