@@ -1,9 +1,6 @@
 {"k":"0000000078","o":"0000000362","v":"001"}
 {"_id":4,"_uid":4,"_dt":1585823028726,"_s":"07e68aaede8c8b37c8d5f972449499f0"}
 {"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Detta är ett test","picture":"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRkO_ghtTXLk5Cd1xm6G5gY2BTmd_0EfibsCvqHxswPGpXQHD4i","text":" Detta är ett test","today":"02/04/2020","_id":{"$wrap":"$oid","v":4}}
-{"k":"0000000078","o":"0000000451","v":"001"}
-{"_id":5,"_uid":5,"_dt":1585824706744,"_s":"11712f7de7ff2792ce34a0b5d81bb7af"}
-{"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"CApser har gjoty","picture":"https://imengine.lrf.infomaker.io/?uuid=4cc92e53-8973-4919-95b9-97f0e8e3480a&type=preview&source=&function=fit&width=630&height=434&q=80&maxsize=630&name=ko_a61164k11270b5cd28km7ffc-jpg","text":" Detta är en bild på ett djur","today":"02/04/2020","_id":{"$wrap":"$oid","v":5}}
 {"k":"0000000078","o":"0000000312","v":"001"}
 {"_id":6,"_uid":6,"_dt":1586845668125,"_s":"7763732001e5dbd88a7be226c8993b8e"}
 {"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Fluga","picture":"https://upload.wikimedia.org/wikipedia/commons/a/a7/Conopidae_fg1.jpg","text":" Detta är en fluga","today":"14/04/2020","_id":{"$wrap":"$oid","v":6}}
@@ -15,9 +12,9 @@
 {"userid":{"$wrap":"$oid","v":20},"poster":"Ishmael Bylundashad","posterimg":"https://media.discordapp.net/attachments/550319756775915541/700349698472673450/IMG_2978.JPG?width=576&height=432","title":"Hejsan Svejnsan","picture":"https://media.discordapp.net/attachments/550319756775915541/700348011821400135/IMG_2017.JPG?width=864&height=648","text":" Hejsan jag heter ISak och jag är ny till denna hemsida.","today":"21/04/2020","_id":{"$wrap":"$oid","v":20}}{{"k":"0000000080","o":"0000001599","v":"001"}
 {"_id":11,"_uid":11,"_dt":1588662238818,"_s":"78245199d22c6672729cf3ea202b5847"}
 {"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"Du är  ful","picture":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANoAAADnCAMAAABPJ7iaAAAAe1BMVEX////ZGRjXAADWAADrnZzzx8f76un64+Pvt7fura3xu7vtqKfYDArgX1///PzgVVX87e3dPz799vbjbGzqlpX54eHoiorzw8P31tbso6Pyv7/fUFDvs7PZFBLaJSXYCQjdOzrcMzLkdHTia2rmfXzgW1viZWTpj4721taIaMepAAADI0lEQVR4nO3d61baQBRA4ckEETGiUrnWyMVWff8nbBESgxnGCZRpznHvv+NJ8q3F4hKzEmOIKGKjVFHdPdqlTdQETWLQJAZNYtAkBk1i0CQGTWLQJAZNYtAkBk1i0CT2zWk2vOzrwaBFX6GDATTbM4Owur3bNK8MduqDZrLbg504FjsBNnvlGOw5BkNofRPe9GlRpdW7KGgXjsVAWr0YNGPuS5s62iApXpPqaOXBK6SZZa6WNiuOXh9tqpd2CQ0aNGjQoEGDBu3MtJljcdp62tXqftNy7aHl27/Zb1X84mkt7drmm+xvDy3JXRVbbTHtfS278dG8RwgNGjRoX9MWnrPzIbTMNZ9et4C2WM/7n5s/BH9kW3sz69U20O+NWkA77YtWOh46/uJAkmi5nYbDZNHSRjJJNOeoClpum8kE0exYL821qITm+uxSQruEBg0aNGjQoEGDFo82fv6x6WWij/bTLja14mTdP6bdbq/+hQYNGjRo0KBBgwYNmhpa17EYizZLt9cD+K7ROp6W/k/a9PXhPdd+hNN8XeiljfXSim3oo43V0vppOaiMNks/BjXRBpP7ygYU0e7mN2l1XhHtb8N1WhlURau+i6ijmbnad0hjfqn9XDNDvTSz1vsdsq+XNtJLU/xTFFpbadPOtkd9NMVntM57HhIaNGjQoEGDBg0aNGjQoEGDBg0aNGjQoEGDBg0aNGjQoEGDBg0aNGjQoEGDBg0aNGjQBNC2N5CLeMX47p516blp85f32/49v8ajxbrToK8z0XxBg3Y4aI5FaPWgQTscNMcitHpyaM67n/mKRTv92fTNnnVl4tE6p9NcD1v1FYtWPhX1+GdCLRvuMhJtXmzjlCd5uX6UeYpDG9ryga/H0/KswSPzTCTa8CkrB4+nJdmqkS0GbWKzj8ETaEmWNXlNHku7ugur+zZbla/GLW3wuSqtvlihJbldXr919/cwrLWbfDyOltg0MFuFHRi0QYs7XPieHYcdQhMaNIlBkxg0iUGTGDSJQZMYNIlBkxg0iUGTGDSJQZMYNIlBk9j3oY1C/+sjoX3aoKuogSFqX38AAvHYqeARqXsAAAAASUVORK5CYII=","text":"Detta är ett test","today":"05/05/2020","_id":{"$wrap":"$oid","v":11}}
-{"k":"0000000080","o":"0000000316","v":"001"}
-{"_id":12,"_uid":12,"_dt":1588845916313,"_s":"c364abc29f46dbfe71fa4d423502e266"}
-{"userid":{"$wrap":"$oid","v":18},"poster":"ras","posterimg":"https://i.pinimg.com/736x/d9/0a/ed/d90aed6bf9edfff0f2c09d7ca6b353ef.jpg","title":"sten","picture":"https://upload.wikimedia.org/wikipedia/commons/2/21/Steninge_-_KMB_-_16001000015278.jpg","text":" sten","today":"07/05/2020","_id":{"$wrap":"$oid","v":12}}
-{"k":"0000000080","o":"0000000344","v":"001"}
-{"_id":13,"_uid":13,"_dt":1588845952215,"_s":"9e29abd0f0687b6f54f2da3a9092a37c"}
-{"userid":{"$wrap":"$oid","v":22},"poster":"sten","posterimg":"https://upload.wikimedia.org/wikipedia/commons/2/21/Steninge_-_KMB_-_16001000015278.jpg","title":"jag är en sten","picture":"https://upload.wikimedia.org/wikipedia/commons/2/21/Steninge_-_KMB_-_16001000015278.jpg","text":" sten","today":"07/05/2020","_id":{"$wrap":"$oid","v":13}}
+{"k":"0000000050","o":"0000000000","v":"001"}
+{"_id":4,"_uid":11,"_dt":1589267663811,"_a":"del"}
+
+{"k":"0000000051","o":"0000000000","v":"001"}
+{"_id":11,"_uid":11,"_dt":1589267780509,"_a":"del"}
+
