@@ -3,22 +3,4 @@ git commit -m ""
 git push origin master
 
 
-Done - Ta reda på vem som är inloggad just nu via webtoken
-
-Done - Minska storleken på bilderna
-/posts ska ta data från database/posts sedan ranga upp varje inlägg efter nyast till äldst
-
-Funktion att den som har gjort inlägget kan gå in och sedan få möjligheten att ta bort inlägget och även ändra det.
-Andra användare ska ha möjligheten att kunna kommentera
-
-"Admin" ska även kunna ta bort inlägget
-Funktionen att ta bort ska titta efter ifall det är samma user eller ett admin konto
-
-
-//users.findOne({}, function(err,user)
-
-
-{"userid":{"$wrap":"$oid","v":13}
-{"userid":{"$wrap":"$oid","v":11}
-
-
+Detta var ett text dokumentet jag använde för att komma ihåg vissa saker som behövde fixas eller git funktionerna som har varit krångliga att komma ihåg.

@@ -4,9 +4,11 @@ module.exports = function(posts){
   var postlength = posts.length
   
   
-
+  //En for loop som går igenom alla inlägg
   for(let i = 0; i < posts.length; i++){
+      //Anledning den går minus är för den ska ta det senaste inlägget till den äldsta
       postlength = postlength - 1;
+      //Det nedanför är det som syns på sidan sen, ${posts} är värdena som blev inmattade när inlägget skrevs.
     postsString += `
       <h4><img src="${posts[postlength].posterimg}" style="width:75px; height:75px;">${posts[postlength].poster}<h4>
         <h1 style="color:blue;">${posts[postlength].title}</h1>
@@ -17,7 +19,7 @@ module.exports = function(posts){
 
     `
   }
-  
+    //postsString är alla inläggen som blir stapplade på varandra i ordning som for loopen gick.
     return `
     <!DOCTYPE html>
     <html lang="sv">
